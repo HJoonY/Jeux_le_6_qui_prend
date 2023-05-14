@@ -14,6 +14,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>fr.an.game.le6quiprend</groupId>
+            <artifactId>le-6-qui-prend-common</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
         </dependency>

@@ -28,6 +28,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>fr.an.game.le6quiprend</groupId>
+                <artifactId>le-6-qui-prend-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>3.0.6</version>
