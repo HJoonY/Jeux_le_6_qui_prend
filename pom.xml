@@ -17,6 +17,8 @@
         <java.version>19</java.version>
         <javafx.version>20-ea+9</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+        <retrofit.version>2.9.0</retrofit.version>
+
     </properties>
 
     <modules>
@@ -52,6 +54,17 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>1.4.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>retrofit</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jackson</artifactId>
+                <version>${retrofit.version}</version>
             </dependency>
 
             <dependency>

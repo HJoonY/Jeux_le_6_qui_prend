@@ -1,5 +1,6 @@
 package fr.an.game.le6quiprend.clientjavafx.ui;
 
+import fr.an.game.le6quiprend.clientjavafx.model.GameHttpClient;
 import fr.an.game.le6quiprend.clientjavafx.model.GameModel;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -36,8 +37,11 @@ public class Le6QuiPrendApplication extends Application {
         }
         mainBorderPanel.setTop(menuAndToolbar);
 
-        GameModel gameModel = new GameModel();
-        GameView gameView = new GameView(gameModel);
+        String serverBaseUrl = "http://localhost:8080"; // TODO default connection settings to server..
+        GameHttpClient gameHttpClient = GameHttpClient.createDefault(serverBaseUrl);
+        GameModel gameModel = new GameModel(gameHttpClient);
+
+        GameView gameView = new GameView(gameModel, true);
         mainBorderPanel.setCenter(gameView.getComponent());
 
         Scene scene = new Scene(mainBorderPanel, 640, 480);
