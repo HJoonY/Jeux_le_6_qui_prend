@@ -10,4 +10,9 @@ public class Card {
         this.value = value;
         this.penalty = penalty;
     }
+
+    @Override
+    public String toString() {
+        return "Card-" + value;
+    }
 }

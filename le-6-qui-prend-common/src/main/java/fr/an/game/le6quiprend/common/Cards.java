@@ -14,37 +14,30 @@ public class Cards {
 
     public static final List<Card> cards = createCards();
 
-    private static final int cardPenalties[] = new int[/* 1 + 104*/] {
-            -1, // no card 0.. invalid marker
-            1, 1, 1, 1, 2, // card 1-5
-            1, 1, 1, 1, // card 6-9
-            3, 5, 1, 1, 1, 2, // card 10-15
-            1, 1, 1, 1, // card 16-19
-            3, 1, 5, 1, 1, 2, // card 20-25
-            1, 1, 1, 1, // card 26-29
-            3, 1, 1, 5, 1, 2, // card 30-35
-            1, 1, 1, 1, // card 36-39
-            3, 1, 1, 1, 5, 2, // card 40-45
-            1, 1, 1, 1, // card 46-49
-            3, 1, 1, 1, 1, 7, // card 50-55
-            1, 1, 1, 1, // card 56-59
-            3, 1, 1, 1, 1, 2, // card 60-65
-            5, 1, 1, 1, // card 66-69
-            3, 1, 1, 1, 1, 2, // card 70,75
-            1, 5, 1, 1, // card 76-79
-            3, 1, 1, 1, 1, 2, // card 80-85
-            2, 1, 1, 5, 1, // card 85-89
-            3, 1, 1, 1, 1, 2, // card 90-95
-            1, 1, 1, 5, // card 96-99
-            3, 1, 1, 1, 1 // card 100-104
-    };
+    public static final Card cardOf(int i) {
+        return cards.get(i-1);
+    }
 
     private static List<Card> createCards() {
         List<Card> res = new ArrayList<>();
-        for(int i = MIN_CARD_VALUE; i <= MAX_CARD_VALUE; i++) {
-            res.add(new Card(i, cardPenalties[i]));
+        for (int i = MIN_CARD_VALUE; i <= MAX_CARD_VALUE; i++) {
+            res.add(new Card(i, cardPenalty(i)));
         }
         return Collections.unmodifiableList(res);
+    }
+
+    public static int cardPenalty(int number) {
+        if (number == 55) {
+            return 7;
+        } else if (number % 11 == 0) {
+            return 5;
+        } else if(number % 10 == 0) {
+            return 3;
+        } else if (number % 5 == 0) {
+            return 2;
+        } else {
+            return 1;
+        }
     }
 
     public static List<CardSet> distributeRandomCards(int nPlayer, Random rand) {
@@ -71,4 +64,5 @@ public class Cards {
         }
         return res;
     }
+
 }

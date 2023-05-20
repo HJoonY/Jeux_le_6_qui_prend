@@ -44,7 +44,7 @@ public class Le6QuiPrendApplication extends Application {
         GameView gameView = new GameView(gameModel, true);
         mainBorderPanel.setCenter(gameView.getComponent());
 
-        Scene scene = new Scene(mainBorderPanel, 640, 480);
+        Scene scene = new Scene(mainBorderPanel, 1400, 800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
