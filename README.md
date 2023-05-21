@@ -7,6 +7,24 @@ java app for game "Le 6 qui prend"
 
 This is a skeleton White-App, for students to build their project starting from here.
 
+When launching the client application, all cards are displayed in the center area.
+
+![](doc/screenshot-skeleton-app-init.jpg)
+
+You can click on any card, and it will toggle the front / back image.
+You can also click with CNTRL button, and the card will be moved to the bottom-right position.
+
+You can enter some text in the "echo-server" text edit, and click on "Test echo (server)" Button.
+It will try to send a http request to and read response from the server, showing result.
+This is done using a worker thread, so (correctly) not freezing the UI.
+
+![](doc/screenshot-skeleton-app-toggle-and-move.jpg)
+
+Here is a small video showing this
+
+[doc/skeleton-app-client.mp4]
+
+
 It implements few things:
 
 ## Maven multi-modules
