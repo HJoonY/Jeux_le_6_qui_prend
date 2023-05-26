@@ -49,7 +49,7 @@ public class GameView {
         }
 
         centerArea = new Pane();
-
+// Test pour git
         // TEMP FOR TEST ..
         // display all cards...
         // Help text on position 0:
